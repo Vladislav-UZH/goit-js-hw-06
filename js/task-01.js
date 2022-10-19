@@ -1,22 +1,21 @@
 /**
  * Напиши скрипт который:
  * 1) Посчитает и выведет в консоль количество категорий в ul#categories, то есть элементов li.item;
- * 
- * 
+ *
+ *
  * 2) Для каждого элемента li.item в списке ul#categories,найдет и выведет в консоль текст заголовка элемента (тега <h2>)
  *  и количество элементов в категории (всех вложенных в него <li>).
- * 
+ *
  */
 
-
 /**
- * 
+ *
  *  elem.parentNode - выберет родителя elem.
  *  elem.childNodes - псевдомассив, хранит все дочерние элементы, включая текстовые.
  * --------------------------------------------------------------------------------------
  *  elem.children - псевдомассив, хранит только дочерние узлы-элементы, то есть соответствующие тегам.
  * --------------------------------------------------------------------------------------
- *  elem.firstChild - выберет первый дочерний элемент внутри elem, включая текстовые узлы. 
+ *  elem.firstChild - выберет первый дочерний элемент внутри elem, включая текстовые узлы.
  * --------------------------------------------------------------------------------------
  *  elem.firstElementChild - выберет первый дочерний узел-элемент внутри elem.
  * --------------------------------------------------------------------------------------
@@ -34,23 +33,15 @@
  * --------------------------------------------------------------------------------------
  */
 const getCountEl = () => {
-
-    const allChildsListsEl = document.querySelectorAll('.item')
-    console.log(`Number of categories: ${allChildsListsEl.length}
+  const allChildsListsEl = document.querySelectorAll(".item");
+  console.log(`Number of categories: ${allChildsListsEl.length}
     `);
-    let titleEl = '';
-    let siblingLength = '';
-    const titlesOfCategories = allChildsListsEl.forEach(el => {
-         titleEl = el.firstElementChild;
-        siblingLength = el.lastElementChild;
-        console.log(`Category: ${titleEl.textContent}
 
-            Elements: ${siblingLength.length}`)
-        console.log('element: ',siblingLength);
-    })
-    
-   
-    return;
-}
-getCountEl()
+  const allTitle = allChildsListsEl.forEach((elem) => {
+    console.log(`Categories: ${elem.firstElementChild.textContent}
 
+          element: ${elem.lastElementChild.children.length}`);
+  });
+  return;
+};
+getCountEl();
