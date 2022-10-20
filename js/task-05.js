@@ -12,6 +12,10 @@ const refs = {
 
 
 function getNameOutput() {
+    console.log(typeof refs.inputEl.value);
+    if (!refs.inputEl.value) {
+        return refs.nameValue.textContent = 'Anonymous'
+    }
    return refs.nameValue.textContent = refs.inputEl.value;
     
 }
