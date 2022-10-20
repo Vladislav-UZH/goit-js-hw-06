@@ -18,7 +18,7 @@ const images = [
 
 const createNewImageEl = () => {
   const listEl = document.querySelector('.gallery');
-  const markup = images.map(img => `<li class='item-list'> <img class='image' src="${img.url}" alt=${img.alt}"> </li>`
+  const markup = images.map(({url,alt} = {}) => `<li class='item-list'> <img class='image' src="${url}" alt=${alt}"> </li>`
   ).join('');
   console.log(markup);
   listEl.insertAdjacentHTML('beforeend', markup)
