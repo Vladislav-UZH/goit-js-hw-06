@@ -36,9 +36,10 @@ const getInputValue = () => {
 // Creating Div Boxes
 const createBoxes = amount => {
   let result = [];
-  let counter = 20;
+  let counterWidth = 20;
+  let counterHeight = 20;
   for (let i = 1; i <= amount; i += 1){
-    result.push(`<div style="background-color: ${getRandomHexColor()}; width:${counter+=10}px; heigth:${counter+=10}px;" ">${i}</div>`);    
+    result.push(`<div style="background-color: ${getRandomHexColor()}; width:${counterWidth+=10}px; height:${counterHeight+=10}px;" ">${i}</div>`);    
   }
   result = result.join('');
 
