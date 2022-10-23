@@ -26,26 +26,30 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-const getData = () => {
-  
+const getInputValue = () => {
+  const amount = refs.quantityOfBoxesInputEl.value;
+  createBoxes(amount);
+  return;
 }
 
 
 const createBoxes = amount => {
   let result = [];
-  for (let i = 0; i < amount; i += 1){
-    result.push(`<div style="background-color: ${getRandomHexColor()};" ">${i}</div>`)    
-  }
-  result = result.join('')
-  console.log(result);
-  refs.boxesContainerEl.innerHTML=result;
-}
+  for (let i = 1; i <= amount; i += 1){
+    result.push(`<div style="background-color: ${getRandomHexColor()}; width:${};" ">${i}</div>`);    
+  };
+  result = result.join('');
 
-createBoxes(20);
+  console.log(result);
+
+  refs.boxesContainerEl.insertAdjacentHTML('beforeend',result);
+}
 
 const destroyBoxes = () => {
-  refs.boxesContainerEl.innerHTML='';
+  refs.boxesContainerEl.innerHTML = '';
 }
+console.log(refs.quantityOfBoxesInputEl.value);
 // console.log(refs.quantityOfBoxesEl.value);
-refs.quantityOfBoxesInputEl.addEventListener('blur', getData)
-destroyBoxes()
+refs.quantityOfBoxesInputEl.addEventListener('blur', getInputValue);
+refs.createDivBtn.addEventListener('click', getInputValue);
+refs.destroyDivBtn.addEventListener('click',destroyBoxes)
