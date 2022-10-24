@@ -16,16 +16,15 @@ const ingredients = [
 
 const getCreateIngredients = () => {
   const listWithId = document.querySelector('#ingredients')
+  let ingredientsEl = '';
   for (let i = 0; i < ingredients.length; i += 1) {
-
-    const ingredientsEl = document.createElement('li');
-    
+    ingredientsEl = document.createElement('li');
     ingredientsEl.textContent = ingredients[i];
     ingredientsEl.classList.add('item');
     
-    listWithId.append(ingredientsEl)
     console.log(ingredientsEl);
   };
-  return;
+  return listWithId.append(ingredientsEl);
+;
 };
 getCreateIngredients()

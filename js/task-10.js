@@ -55,4 +55,4 @@ const destroyBoxes = () => refs.boxesContainerEl.innerHTML = '';
 console.log(refs.quantityOfBoxesInputEl.value);
 refs.quantityOfBoxesInputEl.addEventListener('change', getInputValue);
 refs.createDivBtn.addEventListener('click',callCreateBoxesAfterClick );
-refs.destroyDivBtn.addEventListener('click',destroyBoxes)
+refs.destroyDivBtn.addEventListener('click', destroyBoxes);

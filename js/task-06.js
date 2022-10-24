@@ -33,7 +33,7 @@ const checkInputOfBlur = () => {
 
     console.log(refs.validationInputEl.value.length);
 
-    if (enteredLength >= validLength) {
+    if (enteredLength >= validLength && validLength >= enteredLength ) {
         return setStyleOfInput('valid');
     } 
         return setStyleOfInput('invalid');
